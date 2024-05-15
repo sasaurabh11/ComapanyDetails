@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.env
+.env.*
+.vscode/
+.idea/
+*.egg-info/
+dist/
+build/
+*.egg
+*.egg-info
+*.dist-info
+MANIFEST
+*.manifest
+*.pyz
+*.pywz
+*.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db

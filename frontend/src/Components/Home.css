@@ -1,0 +1,82 @@
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.company-table th,
+.company-table td {
+    border: 1px solid #8d5b5b; /* Add border to table cells */
+    padding: 8px;
+    text-align: left;
+}
+
+.company-table th {
+    background-color: #9f3434; /* Add background color for table header */
+}
+
+.company-table tbody tr:nth-child(even) {
+    background-color: #6b2525; /* Add alternating row colors */
+}
+
+.HomeCompo {
+    height: 100vh;
+    max-width: 800px;
+}
+
+.company-form {
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 8px;
+    margin-left: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.form-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-add-company {
+    display: block;
+    width: 80%;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.btn-add-company:hover {
+    background-color: #45a049;
+}
+
+
+.company-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+.loader {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    color: #333;
+}
