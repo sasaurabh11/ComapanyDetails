@@ -1,12 +1,23 @@
-Company Directory App
-The Company Directory App is a web application built with React for the frontend and Flask for the backend. It allows users to search and filter companies based on various criteria such as company name, revenue, founded year, location, and more. Users can also sort the company data by different attributes and view the details of each company.
+# Company Directory App
 
-Features
-Search: Search for companies based on keywords.
-Filtering: Filter companies by location and other relevant criteria.
-Sorting: Sort the company data by various attributes such as name, revenue, founded year, etc.
-Responsive Design: The application adapts seamlessly to different screen sizes.
-Technologies Used
-Frontend: React, Axios, HTML, CSS
-Backend: Flask, MongoDB
-Other Tools: dotenv, CORS
+Welcome to the Company Directory App! This application allows users to search, filter, and sort through a directory of companies based on various criteria such as company name, revenue, location, and more.
+
+## Features
+
+- **Search**: Search for companies by entering keywords.
+- **Filtering**: Filter companies based on location and other relevant criteria.
+- **Sorting**: Sort companies by name, revenue, founded year, and other attributes.
+- **Responsive Design**: The application is designed to work seamlessly across different devices and screen sizes.
+
+## Technologies Used
+
+- **Frontend**: React, Axios, HTML, CSS
+- **Backend**: Flask, MongoDB
+- **Other Tools**: dotenv, CORS
+
+## Installation
+
+To run the Company Directory App locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
