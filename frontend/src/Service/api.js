@@ -38,6 +38,7 @@ export const getCompaniesbyLocation = async (locationFilter) => {
         });
         return response.data;
     } catch (error) {
+        console.error('Error in getCompaniesByLocation API:', error.message);
         throw error;
     }
 };
@@ -45,12 +46,11 @@ export const getCompaniesbyLocation = async (locationFilter) => {
 export const searchCompanies = async (searchQuery) => {
     try {
         const response = await axios.get(`${url}/companies/search`, {
-            params: {
-                query: searchQuery
-            }
+            params: { query: searchQuery }
         });
         return response.data;
     } catch (error) {
+        console.error('Error in searchCompanies API:', error.message);
         throw error;
     }
 };

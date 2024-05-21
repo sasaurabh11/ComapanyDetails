@@ -5,7 +5,7 @@ import './Home.css';
 
 function Home() {
     const { companyDetails, setCompanyDetails } = useContext(dataprovider);
-    const [loading, setLoading] = useState(true);
+    const [ loading, setLoading ] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [locationFilter, setLocationFilter] = useState('');
     const [formData, setFormData] = useState({
@@ -45,26 +45,26 @@ function Home() {
     }, [locationFilter]);
 
 
-    useEffect(() => {
-        async function search() {
-            try {
-                const results = await searchCompanies(searchQuery);
-                setCompanyDetails(results);
-            } catch (error) {
-                console.error('Error searching companies:', error);
-            }
-        }
+    // useEffect(() => {
+    //     async function search() {
+    //         try {
+    //             const results = await searchCompanies(searchQuery);
+    //             setCompanyDetails(results);
+    //         } catch (error) {
+    //             console.error('Error searching companies:', error);
+    //         }
+    //     }
 
-        const timeoutId = setTimeout(() => {
-            if (searchQuery.trim() !== '') {
-                search();
-            } else {
-                fetchCompanies();
-            }
-        }, 300);
+    //     const timeoutId = setTimeout(() => {
+    //         if (searchQuery.trim() !== '') {
+    //             search();
+    //         } else {
+    //             fetchCompanyDetails();
+    //         }
+    //     }, 300);
 
-        return () => clearTimeout(timeoutId);
-    }, [searchQuery, locationFilter]);
+    //     return () => clearTimeout(timeoutId);
+    // }, [searchQuery]);
 
     const handleLocationFilterChange = (e) => {
         setLocationFilter(e.target.value);
@@ -72,6 +72,10 @@ function Home() {
 
     const handleSearchInputChange = (e) => {
         setSearchQuery(e.target.value);
+    };
+
+    const handleClearFilter = () => {
+        setLocationFilter('');
     };
 
     const handleInputChange = (e) => {
@@ -173,7 +177,31 @@ function Home() {
             </form>
 
             <h2>All company Details</h2>
-            <table className='company-table'> {/* Add class for styling */}
+
+            <div className='filter-container'>
+                <label htmlFor='locationFilter'>Filter by Location:</label>
+                <input
+                    type='text'
+                    id='locationFilter'
+                    value={locationFilter}
+                    onChange={handleLocationFilterChange}
+                    placeholder='Enter location...'
+                />
+                <button onClick={() => setLocationFilter('')}>Clear</button>
+            </div>
+
+            {/* <div className='search-container'>
+                <label htmlFor='searchInput'>Search:</label>
+                <input
+                    type='text'
+                    id='searchInput'
+                    value={searchQuery}
+                    onChange={handleSearchInputChange}
+                    placeholder='Search by name, email, etc...'
+                />
+            </div> */}
+
+            <table className='company-table'> 
                 <thead>
                     <tr>
                         <th>Company Name</th>
@@ -197,13 +225,9 @@ function Home() {
                     ))}
                 </tbody>
             </table>
-
-
-
-
-
             
         </div>
+
     );
 }
 

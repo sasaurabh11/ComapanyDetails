@@ -79,10 +79,12 @@ def data():
 @app.route('/companies/location', methods=['GET'])
 def get_companies():
     location_filter = request.args.get('location')
-    query = {}
-    if location_filter:
-        query['Location'] = location_filter
+    print(location_filter)
 
+    if not location_filter:
+        return jsonify({'error': 'No location query provided'}), 400
+
+    query = {'Location': location_filter}
     filtered_companies = db['company'].find(query)
 
     dataJson = []
@@ -109,13 +111,13 @@ def get_companies():
 
     return jsonify(dataJson)
 
+
 @app.route('/companies/search', methods=['GET'])
 def search_companies():
     search_query = request.args.get('query')
     if not search_query:
         return jsonify({'error': 'No search query provided'}), 400
 
-    # Search for companies based on the search query
     search_results = db['company'].find({'$text': {'$search': search_query}})
 
     dataJson = []
