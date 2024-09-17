@@ -54,3 +54,14 @@ export const searchCompanies = async (searchQuery) => {
         throw error;
     }
 };
+
+export const fetchCompanyData = async () => {
+    try {
+        const response = await axios.get(`${url}/companyupdate`);
+        console.log("get user response ", response)
+        return response.data;
+
+    } catch (error) {
+        console.error('error in getComapanyDetails API', error.message)
+    }
+}

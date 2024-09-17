@@ -19,6 +19,21 @@ CORS(app)
 def index():
     return render_template('index.html')
 
+@app.route('/companyupdate', methods=['POST'])
+def UpdateDb() : 
+    
+    body = request.json
+    print(body)
+
+    db['companyMany'].insert_many(
+        body
+    )
+
+    return jsonify({
+        'status':'Data is Inteserted in Database'
+
+    })
+
 @app.route('/companies', methods=['POST', 'GET'])
 def data():
 
@@ -51,7 +66,7 @@ def data():
         })
     
     if(request.method == 'GET'):
-        allCompanyData = db['company'].find()
+        allCompanyData = db['companyMany'].find()
         dataJson = []
         for data in allCompanyData:
             id = data['_id']
